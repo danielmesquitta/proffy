@@ -8,6 +8,10 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: ${colors.primary};
+
+  @media (min-width: 700px) {
+    height: 34rem;
+  }
 `
 
 export const TopBarContainer = styled.div`
@@ -31,6 +35,10 @@ export const TopBarContainer = styled.div`
   > img {
     height: 1.6rem;
   }
+
+  @media (min-width: 700px) {
+    width: 1100px;
+  }
 `
 
 export const HeaderContent = styled(Wrapper)`
@@ -43,5 +51,22 @@ export const HeaderContent = styled(Wrapper)`
     font: 700 3.6rem Archivo;
     line-height: 4.2rem;
     color: ${colors.textInPrimary};
+
+    @media (min-width: 700px) {
+      max-width: 40rem;
+      align-self: start;
+      margin-left: 3.2rem;
+    }
+  }
+
+  @media (min-width: 700px) {
+    flex: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 4.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `

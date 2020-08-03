@@ -10,7 +10,7 @@ interface Props {
   title: string
 }
 
-const Header: React.FC<Props> = ({ title }) => {
+const Header: React.FC<Props> = ({ title, children }) => {
   return (
     <Container>
       <TopBarContainer>
@@ -21,6 +21,7 @@ const Header: React.FC<Props> = ({ title }) => {
       </TopBarContainer>
       <HeaderContent>
         <strong>{title}</strong>
+        {children}
       </HeaderContent>
     </Container>
   )

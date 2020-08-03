@@ -1,3 +1,9 @@
 import styled from 'styled-components'
 
-export const Container = styled.div``
+import Wrapper from '../../components/Wrapper'
+import { colors } from '../../styles/variables'
+
+export const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+`
