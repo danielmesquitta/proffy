@@ -1,7 +1,8 @@
 import React from 'react'
 
 import Header from '../../components/Header'
-import { Container, SearchForm, InputBlock } from './styles'
+import TeacherItem from '../../components/TeacherItem'
+import { Container, SearchForm, InputBlock, List } from './styles'
 
 const TeacherList: React.FC = () => {
   const inputContent = [
@@ -22,6 +23,10 @@ const TeacherList: React.FC = () => {
           ))}
         </SearchForm>
       </Header>
+
+      <List>
+        <TeacherItem />
+      </List>
     </Container>
   )
 }

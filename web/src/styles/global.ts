@@ -37,10 +37,10 @@ export default createGlobalStyle`
 
   body, input, button, textarea{
     font: 500 1.6rem Poppins;
+    color: ${colors.textBase};
   }
 
-  .container{
-    width: 90vw;
-    max-width: 700px;
+  button{
+    cursor: pointer;
   }
 `

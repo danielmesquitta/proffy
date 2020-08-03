@@ -37,7 +37,7 @@ export const TopBarContainer = styled.div`
   }
 
   @media (min-width: 700px) {
-    width: 1100px;
+    max-width: 1100px;
   }
 `
 
