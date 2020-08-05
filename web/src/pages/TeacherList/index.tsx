@@ -1,17 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Header from '../../components/Header'
 import TeacherItem from '../../components/TeacherItem'
 import Input from '../../components/Input'
 import Select from '../../components/Select'
+import { Teacher } from '../../components/TeacherItem'
+
+import api from '../../services/api'
 import { Container, SearchForm, List } from './styles'
 
 const TeacherList: React.FC = () => {
-  const inputContent = [
-    { id: 'subject', title: 'Matéria' },
-    { id: 'week_day', title: 'Dia da semana' },
-    { id: 'time', title: 'Hora', type: 'time' },
-  ]
+  const [teachers, setTeachers] = useState<Teacher[]>([])
+  const [subject, setSubject] = useState('')
+  const [week_day, setWeekDay] = useState('')
+  const [time, setTime] = useState('')
+
+  useEffect(() => {
+    if (subject && week_day && time) {
+      api
+        .get('classes', { params: { subject, week_day, time } })
+        .then(response => setTeachers(response.data))
+    }
+  }, [subject, week_day, time])
 
   return (
     <Container>
@@ -20,6 +30,8 @@ const TeacherList: React.FC = () => {
           <Select
             id="subject"
             title="Matéria"
+            value={subject}
+            onChange={e => setSubject(e.target.value)}
             options={[
               { value: 'Artes', label: 'Artes' },
               { value: 'Biologia', label: 'Biologia' },
@@ -37,6 +49,8 @@ const TeacherList: React.FC = () => {
           <Select
             id="week_day"
             title="Dia da Semana"
+            value={week_day}
+            onChange={e => setWeekDay(e.target.value)}
             options={[
               { value: '0', label: 'Domingo' },
               { value: '1', label: 'Segunda-feira' },
@@ -47,12 +61,20 @@ const TeacherList: React.FC = () => {
               { value: '6', label: 'Sábado' },
             ]}
           />
-          <Input id="time" title="Hora" type="time" />
+          <Input
+            id="time"
+            title="Hora"
+            type="time"
+            value={time}
+            onChange={e => setTime(e.target.value)}
+          />
         </SearchForm>
       </Header>
 
       <List>
-        <TeacherItem />
+        {teachers.map(teacher => (
+          <TeacherItem teacher={teacher} key={teacher.id} />
+        ))}
       </List>
     </Container>
   )
