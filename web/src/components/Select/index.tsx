@@ -13,8 +13,8 @@ const Select: React.FC<Props> = ({ id, title, options, ...rest }) => {
     <Container>
       <label htmlFor={id}>{title}</label>
       <div>
-        <select id={id} {...rest}>
-          <option value="" disabled selected></option>
+        <select value="" id={id} {...rest}>
+          <option value="" disabled></option>
           {options.map(option => (
             <option value={option.value} key={option.value}>
               {option.label}

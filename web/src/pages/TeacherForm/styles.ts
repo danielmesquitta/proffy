@@ -106,8 +106,10 @@ export const Container = styled.section`
   }
 `
 
-export const ScheduleContainer = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  column-gap: 1.6rem;
+export const ScheduleItem = styled.div`
+  @media (min-width: 700px) {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    column-gap: 1.6rem;
+  }
 `
