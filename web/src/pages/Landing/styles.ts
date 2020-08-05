@@ -62,9 +62,13 @@ export const LogoContainer = styled.div`
 export const HeroImage = styled.img`
   width: 100%;
 
+  @media (min-width: 700px) {
+    height: 30rem;
+  }
   @media (min-width: 1100px) {
     grid-area: hero;
     justify-self: end;
+    height: unset;
   }
 `
 
@@ -74,8 +78,8 @@ export const ButtonsContainer = styled.div`
   margin: 3.2rem 0;
 
   a {
-    width: 30rem;
-    height: 10.4rem;
+    width: 20rem;
+    height: 8rem;
     border-radius: 0.8rem;
     font: 700 2rem Archivo;
     display: flex;
@@ -84,6 +88,11 @@ export const ButtonsContainer = styled.div`
     text-decoration: none;
     color: ${colors.buttonText};
     transition: all 0.2s;
+
+    @media (min-width: 700px) {
+      width: 30rem;
+      height: 10.4rem;
+    }
 
     :first-child {
       margin-right: 1.6rem;

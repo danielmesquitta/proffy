@@ -35,7 +35,7 @@ export default createGlobalStyle`
     justify-content: center;
   }
 
-  body, input, button, textarea{
+  body, input, button, textarea, select{
     font: 500 1.6rem Poppins;
     color: ${colors.textBase};
   }

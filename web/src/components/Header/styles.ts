@@ -59,6 +59,19 @@ export const HeaderContent = styled(Wrapper)`
     }
   }
 
+  p {
+    max-width: 30rem;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    color: ${colors.textInPrimary};
+    margin-top: 2.4rem;
+    align-self: start;
+
+    @media (min-width: 700px) {
+      margin-left: 3.6rem;
+    }
+  }
+
   @media (min-width: 700px) {
     flex: 1;
     max-width: 1100px;
