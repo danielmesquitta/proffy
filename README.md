@@ -31,8 +31,20 @@ Or, if you prefer, you can charge for your work hour 📚🖊
 - [React Toastfy](https://fkhadra.github.io/react-toastify/introduction/)
 - [Axios](https://github.com/axios/axios)
 
+## MOBILE
 
-## GET STARTED
+### Technologies
+
+- [ReactJS](https://reactjs.org/)
+- [React Native](https://reactnative.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React Navigation](https://reactnavigation.org/)
+- [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)
+- [Styled Components](https://styled-components.com/)
+- [Axios](https://github.com/axios/axios)
+
+
+## GETTING STARTED
 ### Requirements
 
 - [Node.js](https://nodejs.org/)
@@ -72,4 +84,17 @@ $ yarn
 
 # Start
 $ yarn start
+```
+
+### Start mobile
+
+```shell
+# Go to the correct folder
+$ cd mobile
+
+# Install the dependencies
+$ yarn
+
+# Start
+$ yarn android
 ```
