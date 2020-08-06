@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="logo.png">
+  <img src="logo.png" width="60%" />
 </h1>
 
 [REST-API](#back-end), [WEB](#front-end) and [MOBILE](#mobile) application.
