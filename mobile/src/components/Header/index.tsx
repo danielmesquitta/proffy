@@ -26,6 +26,7 @@ const Header: React.FC<Props> = ({ title, children, ...otherProps }) => {
       </TopBar>
 
       <Title>{title}</Title>
+      {children}
     </Container>
   )
 }

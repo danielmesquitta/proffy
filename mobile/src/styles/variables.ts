@@ -20,4 +20,5 @@ export const colors = {
   tabFooterActive: '#EBEBF5',
   tabText: '#C1BCCC',
   tabTextActive: '#32264d',
+  heartButton: '#E33D3D',
 }
