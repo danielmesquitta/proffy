@@ -31,6 +31,15 @@ export const InputGroup = styled.View`
   margin-bottom: 20px;
 `
 
+export const Select = styled.View`
+  height: 54px;
+  background: ${colors.inputBackground};
+  justify-content: center;
+  padding: 0 16px;
+  margin: 4px 0 16px;
+  border-radius: 8px;
+`
+
 export const InputBlock = styled.View`
   width: 48%;
 `
