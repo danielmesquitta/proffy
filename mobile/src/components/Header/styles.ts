@@ -20,3 +20,9 @@ export const Title = styled.Text`
   max-width: 160px;
   margin: 40px 0;
 `
+
+export const HeaderText = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`
