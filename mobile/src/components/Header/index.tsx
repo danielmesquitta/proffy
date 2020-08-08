@@ -9,7 +9,7 @@ import logoImg from '../../assets/images/logo.png'
 import { Container, TopBar, Title, HeaderText } from './styles'
 
 interface Props {
-  title: string
+  title?: string
   headerRight?: ReactNode
 }
 
@@ -31,10 +31,13 @@ const Header: React.FC<Props> = ({
         <Image source={logoImg} resizeMode="contain" />
       </TopBar>
 
-      <HeaderText>
-        <Title>{title}</Title>
-        {headerRight}
-      </HeaderText>
+      {(title || headerRight) && (
+        <HeaderText>
+          <Title>{title}</Title>
+          {headerRight}
+        </HeaderText>
+      )}
+
       {children}
     </Container>
   )

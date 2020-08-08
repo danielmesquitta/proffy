@@ -1,19 +1,30 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
+import { useFocusEffect } from '@react-navigation/native'
 
 import Header from '../../components/Header'
-import TeacherItem from '../../components/TeacherItem'
+import TeacherItem, { Teacher } from '../../components/TeacherItem'
 import { Container, List } from './styles'
+import AsyncStorage from '@react-native-community/async-storage'
 
 const Favorites: React.FC = () => {
+  const [favorites, setFavorites] = useState<Teacher[]>([])
+
+  useFocusEffect(
+    useCallback(() => {
+      AsyncStorage.getItem('favorites').then(response => {
+        if (response) setFavorites(JSON.parse(response))
+      })
+    }, [])
+  )
+
   return (
     <Container>
       <Header title="Meus Proffys favoritos" />
 
       <List>
-        <TeacherItem favorited />
-        <TeacherItem favorited />
-        <TeacherItem favorited />
-        <TeacherItem favorited />
+        {favorites.map(teacher => (
+          <TeacherItem key={teacher.id} teacher={teacher} favorited />
+        ))}
       </List>
     </Container>
   )

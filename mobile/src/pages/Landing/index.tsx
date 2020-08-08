@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Image } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
@@ -19,8 +19,18 @@ import {
   TotalConnections,
 } from './styles'
 
+import api from '../../services/api'
+
 const Landing: React.FC = () => {
   const { navigate } = useNavigation()
+
+  const [totalConnections, setTotalConnections] = useState(0)
+
+  useEffect(() => {
+    api
+      .get('connections')
+      .then(response => setTotalConnections(response.data.total))
+  }, [])
 
   return (
     <Container>
@@ -47,7 +57,8 @@ const Landing: React.FC = () => {
       </ButtonsContainer>
 
       <TotalConnections>
-        Total de 280 conexões já realizadas <Image source={heartIcon} />
+        Total de {totalConnections} conexões já realizadas{' '}
+        <Image source={heartIcon} />
       </TotalConnections>
     </Container>
   )
