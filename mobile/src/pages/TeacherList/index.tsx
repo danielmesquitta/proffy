@@ -1,5 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { Text } from 'react-native'
+import { RectButton } from 'react-native-gesture-handler'
 import { Picker } from '@react-native-community/picker'
+import DateTimePicker from '@react-native-community/datetimepicker'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
 import {
@@ -21,6 +24,10 @@ import TeacherItem from '../../components/TeacherItem'
 import { colors } from '../../styles/variables'
 
 const TeacherList: React.FC = () => {
+  const [show, setShow] = useState(false)
+  const [date, setDate] = useState(new Date())
+  const [selectedDate, setSelectedDate] = useState('')
+
   const [isFiltersVisible, setIsFiltersVisible] = useState(true)
 
   const [selectedSubject, setSelectedSubject] = useState('Artes')
@@ -50,9 +57,14 @@ const TeacherList: React.FC = () => {
     { value: 'Química', label: 'Química' },
   ]
 
+  useEffect(() => {
+    const [hour, minutes] = String(date).split(' ')[4].split(':')
+    setSelectedDate(`${hour}:${minutes}`)
+  }, [date])
+
   function handleSubmitSearchForm() {
     setIsFiltersVisible(!isFiltersVisible)
-    console.log({ selectedSubject, selectedWeekDay })
+    console.log({ selectedSubject, selectedWeekDay, date })
   }
 
   return (
@@ -109,7 +121,22 @@ const TeacherList: React.FC = () => {
 
               <InputBlock>
                 <Label>Horário</Label>
-                <Input />
+                <Input onPress={() => setShow(true)}>
+                  <Text>{selectedDate}h</Text>
+                  <Ionicons name="caret-down-sharp" size={12} color="#555" />
+                </Input>
+                {show && (
+                  <DateTimePicker
+                    value={date}
+                    mode="time"
+                    is24Hour={true}
+                    display="default"
+                    onChange={(e, selectedDate) => {
+                      setShow(false)
+                      setDate(selectedDate || date)
+                    }}
+                  />
+                )}
               </InputBlock>
             </InputGroup>
 

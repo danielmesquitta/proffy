@@ -44,11 +44,13 @@ export const InputBlock = styled.View`
   width: 48%;
 `
 
-export const Input = styled.TextInput`
+export const Input = styled(RectButton)`
   height: 54px;
   background: ${colors.inputBackground};
-  justify-content: center;
-  padding: 0 16px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px 0 16px;
   margin: 4px 0 16px;
   border-radius: 8px;
 `
