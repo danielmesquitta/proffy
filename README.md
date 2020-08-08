@@ -2,7 +2,7 @@
   <img src="logo.png" width="60%" />
 </h1>
 
-[REST-API](#back-end), [WEB](#front-end) and [MOBILE](#mobile) application.
+[REST-API](#server), [WEB](#web) and [MOBILE](#mobile) application.
 Here you can get in touch with teachers and pay for high school and elementary classes. 
 Or, if you prefer, you can charge for your work hour 📚🖊
 
@@ -10,7 +10,7 @@ Or, if you prefer, you can charge for your work hour 📚🖊
 <img src="mockup.png">
 <br>
 
-## BACK-END
+## SERVER
 
 ### Technologies
 
@@ -39,7 +39,9 @@ Or, if you prefer, you can charge for your work hour 📚🖊
 - [React Native](https://reactnative.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [React Navigation](https://reactnavigation.org/)
-- [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)
+- [Vector Icons](https://github.com/oblador/react-native-vector-icons)
+- [Picker](https://github.com/react-native-community/react-native-picker)
+- [DateTimePicker](https://github.com/react-native-community/datetimepicker)
 - [Styled Components](https://styled-components.com/)
 - [Axios](https://github.com/axios/axios)
 
@@ -50,6 +52,7 @@ Or, if you prefer, you can charge for your work hour 📚🖊
 - [Node.js](https://nodejs.org/)
 - [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/)
 - [git](https://git-scm.com/)
+- [React Native development environment](https://reactnative.dev/docs/environment-setup)
 
 #### Clone the project and access the folder
 
