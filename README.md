@@ -31,6 +31,14 @@ Or, if you prefer, you can charge for your work hour 📚🖊
 - [React Toastfy](https://fkhadra.github.io/react-toastify/introduction/)
 - [Axios](https://github.com/axios/axios)
 
+<br/>
+
+<p align="center">
+  <img src="demo-web.gif" />
+</p>
+
+<br/>
+
 ## MOBILE
 
 ### Technologies
